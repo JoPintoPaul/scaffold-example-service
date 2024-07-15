@@ -27,10 +27,10 @@ trait BackLinkFluency {
   object BackLinkViewModel {
 
     def apply(href: String)(implicit messages: Messages): BackLink =
-      BackLink(
-        href    = href,
-        content = Text(messages("site.back"))
+      BackLink.withDefaultText(
+        href    = href
       )
+
   }
 
   implicit class FluentBackLink(backLink: BackLink) {
