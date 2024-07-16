@@ -26,9 +26,9 @@ import uk.gov.hmrc.govukfrontend.views.viewmodels.hint.Hint
 import uk.gov.hmrc.hmrcfrontend.views.Implicits.RichDateInput
 import viewmodels.ErrorMessageAwareness
 
-object date extends DateFluency
+object dateUpdated extends DateFluencyUpdated
 
-trait DateFluency {
+trait DateFluencyUpdated {
 
   object DateViewModel extends ErrorMessageAwareness {
 
