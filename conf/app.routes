@@ -19,3 +19,8 @@ GET         /account/sign-out                            controllers.auth.AuthCo
 GET         /account/signed-out                          controllers.auth.SignedOutController.onPageLoad()
 
 GET         /unauthorised                                controllers.UnauthorisedController.onPageLoad()
+
+GET        /date-input-example                           controllers.DateInputExamplePageController.onPageLoad(mode: Mode = NormalMode)
+POST       /date-input-example                           controllers.DateInputExamplePageController.onSubmit(mode: Mode = NormalMode)
+GET        /change-date-input-example                    controllers.DateInputExamplePageController.onPageLoad(mode: Mode = CheckMode)
+POST       /change-date-input-example                    controllers.DateInputExamplePageController.onSubmit(mode: Mode = CheckMode)

@@ -47,3 +47,13 @@ signedOut.guidance = We did not save your answers.
 
 unauthorised.title = You can’t access this service with this account
 unauthorised.heading = You can’t access this service with this account
+
+dateInputExamplePage.title = DateInputExamplePage
+dateInputExamplePage.heading = DateInputExamplePage
+dateInputExamplePage.hint = For example, 12 11 2007.
+dateInputExamplePage.checkYourAnswersLabel = DateInputExamplePage
+dateInputExamplePage.error.required.all = Enter the dateInputExamplePage
+dateInputExamplePage.error.required.two = The dateInputExamplePage must include {0} and {1}
+dateInputExamplePage.error.required = The dateInputExamplePage must include {0}
+dateInputExamplePage.error.invalid = Enter a real DateInputExamplePage
+dateInputExamplePage.change.hidden = DateInputExamplePage

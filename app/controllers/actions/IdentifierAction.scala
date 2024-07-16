@@ -42,16 +42,21 @@ class AuthenticatedIdentifierAction @Inject()(
 
     implicit val hc: HeaderCarrier = HeaderCarrierConverter.fromRequestAndSession(request, request.session)
 
-    authorised().retrieve(Retrievals.internalId) {
-      _.map {
-        internalId => block(IdentifierRequest(request, internalId))
-      }.getOrElse(throw new UnauthorizedException("Unable to retrieve internal Id"))
-    } recover {
-      case _: NoActiveSession =>
-        Redirect(config.loginUrl, Map("continue" -> Seq(config.loginContinueUrl)))
-      case _: AuthorisationException =>
-        Redirect(routes.UnauthorisedController.onPageLoad())
-    }
+    val returnBlock = block(IdentifierRequest(request, "internalId"))
+    println("Within invokeBlock")
+
+    returnBlock
+
+//    authorised().retrieve(Retrievals.internalId) {
+//      _.map {
+//        internalId => block(IdentifierRequest(request, internalId))
+//      }.getOrElse(throw new UnauthorizedException("Unable to retrieve internal Id"))
+//    } recover {
+//      case _: NoActiveSession =>
+//        Redirect(config.loginUrl, Map("continue" -> Seq(config.loginContinueUrl)))
+//      case _: AuthorisationException =>
+//        Redirect(routes.UnauthorisedController.onPageLoad())
+//    }
   }
 }
 
